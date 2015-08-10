@@ -1,0 +1,11 @@
+Using Eratosthenes Sieve, make a list of all n numbers.
+Starting at the first number in the list, 2, "cross out" all numbers
+that are multiples of that number. Continue with all subsequent
+not "crossed out" numbers.
+
+Once you have a list of all the prime numbers, sum them all up.
+
+=========
+Run
+=========
+    python primesum.py <max number inclusive>

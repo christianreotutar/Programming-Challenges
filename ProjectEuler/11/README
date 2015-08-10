@@ -1,0 +1,9 @@
+========
+Run
+========
+
+./run.sh
+If you need to give it permissions: chmod +x run.sh
+
+* Apparently python has a 'global' keyword to keep scope of a global var
+* The zip(*array) function finds the transpose of an array

@@ -1,0 +1,10 @@
+This problem is a counting problem and less of a programming problem.
+Instead of using dynamic programming to count the number of routes
+to move through this grid, you can take advantage of a few facts.
+
+It is a 20x20 grid. This means to get from the top left corner to the
+bottom right always requires 40 steps: 20 steps to the right, 20 steps
+down.
+
+This means that we only need to find the unique 20 of the 40 steps.
+40 choose 20 is the answer.
