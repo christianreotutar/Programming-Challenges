@@ -1,0 +1,49 @@
+===============================
+Problem
+===============================
+
+You are given the following information, but you may prefer to do some research for yourself.
+
+    1 Jan 1900 was a Monday.
+    Thirty days has September,
+    April, June and November.
+    All the rest have thirty-one,
+    Saving February alone,
+    Which has twenty-eight, rain or shine.
+    And on leap years, twenty-nine.
+    A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
+
+How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+
+===============================
+Solution
+===============================
+
+First I tried a subtraction algorithm by simply subtracting date1 from
+date2 in order to find the number of days between 2 dates. I've become
+obsessed with this algorithm since then. This didn't work because date1
+month or day can be bigger than date2 month or day.
+
+Then I tried a modified version where I fixed the days and months using
+a "borrowing" principle from simple subtraction. I was off by a couple of
+numbers and I could not figure out why.
+
+Finally, I Googled and I decided to try it with Julian Day Numbers, the 
+continuous count of days since the beginning of the Julian Period.
+
+    First compute # years (y) and # months (m) since March 1, -4800
+    a = floor((14-month)/12)        # 1 for jan/feb, 0 for others
+    y = year + 4800 - a             
+    m = month + 12a - 3             # 0 for march, 11 for feb
+
+    assume f() = floor()
+    jdn = day + f((153m + 2)/5) + 365y + f(y/4) - f(y/100) + f(y/400) - 32045
+
+This is a O(1) formula to keep days relative to one single date. I did
+not come up with the algorithm, so I do feel guilty.
+
+I figured out the solution in the middle (without calculating days between)
+but I thought this problem was more fun. In this other solution, I would
+find the starting day of year2 at jan1 and then count to that date to see
+if it were a monday. I would do this for every 1st monday of a month for
+the century.
