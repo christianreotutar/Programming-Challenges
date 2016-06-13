@@ -9,3 +9,16 @@ See input.txt for the digits
 ====================
 Solution
 ====================
+
+I started in Python a long time ago, finished in C++.
+
+Added every character individually and then at the end added their
+overflows from the least significant to the most. At the end, I counted
+most significant digit + the digit in the following slots ( kind of 
+cheating ).
+
+C++ notes: You cannot cast a character to an int (i.e. from '0' -> 0),
+you must instead subtract '0' from it. This is b/c characters are
+represented in ASCII.
+
+Strings are a standard library thing.
